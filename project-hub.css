@@ -672,12 +672,22 @@ code {
   box-shadow: 0 12px 35px rgba(16, 24, 40, 0.08);
 }
 
+.strategy-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: start;
+}
+
 .strategy-number {
   display: inline-grid;
   place-items: center;
   width: 34px;
   height: 34px;
-  margin-bottom: 14px;
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
   border-radius: 50%;
   color: #ffffff;
   background: var(--blue);
@@ -693,11 +703,22 @@ code {
   line-height: 1.12;
 }
 
+.strategy-card h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin-bottom: 0;
+}
+
 .strategy-card p,
 .strategy-list p,
 .tactic-grid p {
   margin: 0;
   color: var(--muted);
+}
+
+.strategy-card p {
+  grid-column: 2;
 }
 
 .strategy-list {
