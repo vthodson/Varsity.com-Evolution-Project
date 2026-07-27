@@ -2,9 +2,9 @@ const view = document.querySelector("#view");
 const breadcrumbs = document.querySelector("#breadcrumbs");
 const menu = document.querySelector("#site-menu");
 const menuButton = document.querySelector(".menu-button");
+const searchForm = document.querySelector("#site-search-form");
 const searchInput = document.querySelector("#site-search");
 const searchResults = document.querySelector("#search-results");
-const clearSearch = document.querySelector("#clear-search");
 
 const eventData = [
   {
@@ -1330,7 +1330,7 @@ const newsData = [
     eventId: "nda-dallas-regional",
     eventType: "Competition",
     publishedDate: "2026-10-28",
-    summary: "A quick place for schedule, arrival, ticket, gear, and Watch Online updates for families and teams attending NDA Dallas."
+    summary: "A quick place for schedule, arrival, ticket, gear, and Watch updates for families and teams attending NDA Dallas."
   },
   {
     id: "dance-summit-season-preview",
@@ -1343,7 +1343,7 @@ const newsData = [
     eventId: "dance-summit-2027",
     eventType: "Competition",
     publishedDate: "2027-01-15",
-    summary: "A customer-friendly story page that can explain bids, planning, Watch Online, event gear, and what teams can expect."
+    summary: "A customer-friendly story page that can explain bids, planning, Watch, event gear, and what teams can expect."
   },
   {
     id: "usa-dance-regionals-guide",
@@ -1414,13 +1414,13 @@ const newsData = [
     id: "varsity-tv-weekend-watch-guide",
     title: "What to watch this weekend",
     type: "Announcement",
-    category: "Watch Online",
+    category: "Watch",
     activity: "",
     audience: "Fans",
     brand: "Varsity TV",
     eventId: "",
     publishedDate: "2027-01-08",
-    summary: "A Watch Online story that helps fans find live events, replays, featured teams, and upcoming coverage."
+    summary: "A Watch story that helps fans find live events, replays, featured teams, and upcoming coverage."
   },
   {
     id: "yearbook-order-deadlines",
@@ -1619,7 +1619,7 @@ const knowledgeData = [
     category: "Participation Pathways",
     activity: "Dance",
     audience: "Parents / Athletes",
-    summary: "A guide to School Dance, All Star Dance, dance brands, events, uniforms, Watch Online, and CLI Studios.",
+    summary: "A guide to School Dance, All Star Dance, dance brands, events, uniforms, Watch, and CLI Studios.",
     answers: ["How do I start dance team?", "What are the dance participation paths?"],
     nextSteps: [
       card("School Dance", "Explore school dance camps, competitions, brands, and uniforms.", "#/audience/school?activity=Dance", "School"),
@@ -2042,7 +2042,7 @@ const handoffs = {
   },
   varsitytv: {
     title: "Varsity TV",
-    eyebrow: "Watch Online",
+    eyebrow: "Watch",
     copy: "Watch live coverage, upcoming events, replays, and saved teams through Varsity TV.",
     actions: ["Watch live", "View replay", "Follow an event"]
   },
@@ -2235,15 +2235,26 @@ const routes = {
     hideHero: true,
     custom: renderHome,
     cards: [
-      card("Cheer", "Start here for cheer camps, competitions, School, All Star, uniforms, Watch Online, and support.", "#/cheer", "Explore"),
-      card("Dance", "Start here for School, All Star, dance events, UDA/NDA, CLI Studios, fashion/uniforms, Watch Online, and support.", "#/dance", "Explore"),
-      card("Events", "Find camps, competitions, tickets, event gear, schedules, results, Watch Online, and myVarsity.", "#/events", "Explore"),
+      card("Cheer", "Start here for cheer camps, competitions, School, All Star, uniforms, Watch, and support.", "#/cheer", "Explore"),
+      card("Dance", "Start here for School, All Star, dance events, UDA/NDA, CLI Studios, fashion/uniforms, Watch, and support.", "#/dance", "Explore"),
+      card("Events", "Find camps, competitions, tickets, event gear, schedules, results, Watch, and myVarsity.", "#/events", "Explore"),
       card("Yearbook", "Find adviser, family, ordering, eShare, workshop, login, and rep help.", "#/yearbook", "Explore"),
       card("Performing Arts", "Find band, color guard, Stanbury, events, catalog, and rep help.", "#/performing-arts", "Explore"),
       card("Fashion and Uniforms", "Browse team apparel, uniforms, catalogs, inspiration, rep help, and My Team Shop.", "#/fashion-uniforms", "Explore"),
-      card("Watch Online", "Watch live coverage, upcoming events, replays, and event videos.", "#/watch", "Explore"),
+      card("Watch", "Watch live coverage, upcoming events, replays, and event videos.", "#/watch", "Explore"),
       card("Shop", "Shop products and event merchandise for parents, athletes, fans, and individual buyers.", "#/shop", "Explore")
     ]
+  },
+  "/search": {
+    title: "Search Results",
+    eyebrow: "Search",
+    copy: (path, query) => {
+      const searchTerm = query.get("q") || "";
+      return searchTerm
+        ? `Results for "${searchTerm}".`
+        : "Search Varsity.com prototype pages, events, guides, news, support routes, and handoffs.";
+    },
+    custom: renderSearchPage
   },
   "/cheer": {
     title: "Cheer",
@@ -2272,7 +2283,7 @@ const routes = {
   "/dance": {
     title: "Dance",
     eyebrow: "Start with Dance",
-    copy: "Choose the dance path that fits you, including School, All Star, events, dance brands, rules, results, uniforms, Watch Online, CLI Studios, and support.",
+    copy: "Choose the dance path that fits you, including School, All Star, events, dance brands, rules, results, uniforms, Watch, CLI Studios, and support.",
     custom: () => renderRouteCardsWithNews("/dance", "Latest Dance news", "Helpful updates, guides, and stories connected to dance.", { activity: "Dance" }),
     cards: [
       card("Dance Events", "Dance camps, competitions, schedules, results, tickets, gear, and registration help.", "#/events?activity=Dance", "Events"),
@@ -2332,7 +2343,7 @@ const routes = {
     custom: renderFashionUniforms
   },
   "/watch": {
-    title: "Watch Online",
+    title: "Watch",
     eyebrow: "Varsity TV",
     copy: "Find live events, upcoming coverage, replays, saved teams, and event videos.",
     cards: [
@@ -2431,6 +2442,7 @@ function render() {
   const routeCopy = getRouteCopy(route, path, query);
   setActiveLinks(path);
   renderBreadcrumbs(path, route.title);
+  syncSearchInput(path, query);
 
   view.innerHTML = `
     ${route.hideHero ? "" : `
@@ -2447,6 +2459,14 @@ function render() {
   resetPageScroll();
   menu.classList.remove("is-open");
   menuButton.setAttribute("aria-expanded", "false");
+}
+
+function syncSearchInput(path, query) {
+  if (path === "/search") {
+    searchInput.value = query.get("q") || "";
+  }
+  searchResults.hidden = true;
+  searchResults.innerHTML = "";
 }
 
 function resetPageScroll() {
@@ -2540,7 +2560,7 @@ function resolveRoute(path) {
     return {
       title: "Dance Brands",
       eyebrow: "Dance brand choices",
-      copy: "Choose from several dance brands to find events, camps, rules, scoring, results, Watch Online, Fashion and Uniforms, and support.",
+      copy: "Choose from several dance brands to find events, camps, rules, scoring, results, Watch, Fashion and Uniforms, and support.",
       custom: renderDanceBrands
     };
   }
@@ -2635,14 +2655,14 @@ function renderLeaguePage() {
 
 function getEventsRouteCopy(path, query) {
   if (query?.get("audience") === "All Star") {
-    return "Search All Star competitions, special events, tickets, event gear, schedules, results, Watch Online, and myVarsity help.";
+    return "Search All Star competitions, special events, tickets, event gear, schedules, results, Watch, and myVarsity help.";
   }
 
   if (query?.get("audience") === "School") {
-    return "Search school camps, competitions, special events, Spirit Days, tickets, event gear, schedules, results, Watch Online, and myVarsity help.";
+    return "Search school camps, competitions, special events, Spirit Days, tickets, event gear, schedules, results, Watch, and myVarsity help.";
   }
 
-  return "Search school camps, competitions, special events, Spirit Days, workshops, performing arts events, tickets, event gear, schedules, results, Watch Online, and myVarsity help.";
+  return "Search school camps, competitions, special events, Spirit Days, workshops, performing arts events, tickets, event gear, schedules, results, Watch, and myVarsity help.";
 }
 
 function renderCards(cards) {
@@ -2684,7 +2704,7 @@ function renderCard(item) {
 function renderNews(path, query) {
   const filters = getNewsFilters(query);
   const activeFilter = filters.category || filters.activity || "All";
-  const filterOptions = ["All", "Cheer", "Dance", "Events", "Yearbook", "Performing Arts", "Fashion and Uniforms", "Watch Online"];
+  const filterOptions = ["All", "Cheer", "Dance", "Events", "Yearbook", "Performing Arts", "Fashion and Uniforms", "Watch"];
   const stories = getFilteredNews(filters);
 
   return `
@@ -3546,7 +3566,7 @@ function renderEventDetail(event) {
       show: event.gear !== "Not applicable"
     },
     {
-      label: "Watch Online",
+      label: "Watch",
       status: event.watch,
       copy: "Live, upcoming, and replay coverage when available.",
       cta: "Open coverage",
@@ -4009,7 +4029,7 @@ function renderAudiencePage(slug, activity, program) {
     ...directoryCard,
     card("Fashion and Uniforms", "Find the right uniform catalog, rep route, My Team Shop, or individual shopping path.", uniformHref, "Products"),
     ...shopCard,
-    card("Watch Online", "Find live or replay coverage connected to this activity and program.", activity ? `#/watch?activity=${encodeURIComponent(activity)}` : "#/watch", "Varsity TV"),
+    card("Watch", "Find live or replay coverage connected to this activity and program.", activity ? `#/watch?activity=${encodeURIComponent(activity)}` : "#/watch", "Varsity TV"),
     card("Support", "Get help for this program.", "#/support", "Support")
   ];
 
@@ -4211,6 +4231,15 @@ function buildSearchIndex() {
 
 const searchIndex = buildSearchIndex();
 
+function getSearchMatches(value, limit = 8) {
+  const query = value.trim().toLowerCase();
+  if (!query) return [];
+
+  return searchIndex
+    .filter((item) => `${item.title} ${item.copy} ${item.label}`.toLowerCase().includes(query))
+    .slice(0, limit);
+}
+
 function runSearch(value) {
   const query = value.trim().toLowerCase();
   if (!query) {
@@ -4219,14 +4248,51 @@ function runSearch(value) {
     return;
   }
 
-  const matches = searchIndex
-    .filter((item) => `${item.title} ${item.copy} ${item.label}`.toLowerCase().includes(query))
-    .slice(0, 8);
+  const matches = getSearchMatches(value, 8);
 
   searchResults.hidden = false;
   searchResults.innerHTML = matches.length
     ? matches.map((item) => renderSearchResultCard(item)).join("")
     : `<article class="route-card"><span>No match</span><h3>Try another search</h3><p>Search for tickets, status, Dance, CLI, My Team Shop, event gear, eShare, or uniforms.</p></article>`;
+}
+
+function submitSiteSearch() {
+  const value = searchInput.value.trim();
+  searchResults.hidden = true;
+  searchResults.innerHTML = "";
+
+  if (!value) {
+    searchInput.focus();
+    return;
+  }
+
+  window.location.hash = `/search?q=${encodeURIComponent(value)}`;
+}
+
+function renderSearchPage(path, query) {
+  const searchTerm = query.get("q") || "";
+  const matches = getSearchMatches(searchTerm, 24);
+
+  return `
+    <section class="view-section">
+      <div class="section-head">
+        <h2>Search results</h2>
+        <p>${searchTerm ? `Showing prototype results for "${escapeHtml(searchTerm)}".` : "Use the search field above to search across the prototype."}</p>
+      </div>
+      ${searchTerm ? `
+        <div class="event-result-summary">${matches.length} ${matches.length === 1 ? "result" : "results"} found</div>
+        <div class="card-grid">
+          ${matches.length ? matches.map((item) => renderSearchResultCard(item)).join("") : `
+            <article class="route-card">
+              <span>No match</span>
+              <h3>Try another search</h3>
+              <p>Search for tickets, status, Dance, CLI, My Team Shop, event gear, eShare, uniforms, camps, or results.</p>
+            </article>
+          `}
+        </div>
+      ` : ""}
+    </section>
+  `;
 }
 
 function renderSearchResultCard(item) {
@@ -4305,6 +4371,11 @@ menuButton.addEventListener("click", () => {
 
 searchInput.addEventListener("input", (event) => runSearch(event.target.value));
 
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  submitSiteSearch();
+});
+
 searchResults.addEventListener("click", (event) => {
   const link = event.target.closest("a[href]");
   if (!link) return;
@@ -4381,12 +4452,6 @@ function normalizeDateRange(dateFrom, dateTo) {
 
   return { dateFrom, dateTo };
 }
-
-clearSearch.addEventListener("click", () => {
-  searchInput.value = "";
-  runSearch("");
-  searchInput.focus();
-});
 
 window.addEventListener("hashchange", render);
 render();

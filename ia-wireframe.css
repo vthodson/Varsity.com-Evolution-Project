@@ -224,6 +224,25 @@ button {
   border-radius: 4px;
 }
 
+.search-submit {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  padding: 0;
+  color: var(--panel);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.search-submit span {
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
 .search-results {
   display: grid;
   gap: 8px;
