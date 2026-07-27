@@ -1,0 +1,26 @@
+# Local runtime output
+*.log
+*.out.log
+*.err.log
+
+# Local dependencies and environment files
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Local Netlify state
+.netlify/
+
+# One-off preview packages
+*.zip
+*.tar
+deploy-varsity-ia-preview/
+screenshots/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Invalid placeholder download
+Varsity-Spirit-Branding-Guidelines.pdf
