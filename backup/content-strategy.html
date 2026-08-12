@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Varsity.com Content Strategy</title>
+    <meta
+      name="description"
+      content="Content strategy landing page for the Varsity.com evolution project."
+    >
+    <link rel="stylesheet" href="project-hub.css">
+  </head>
+  <body>
+    <nav class="project-nav" aria-label="Varsity.com content strategy navigation">
+      <a class="brand-link" href="index.html" aria-label="Varsity.com evolution project hub">
+        <span><strong>Varsity.com</strong> Evolution Project Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="product-strategy.html">Product Strategy</a>
+        <a href="ia-wireframe.html">Prototype Wireframes</a>
+        <a href="project-plan.html">Project Plan</a>
+        <a href="content-strategy.html" aria-current="page">Content Strategy</a>
+        <a href="tech.html">Tech</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section-band alt">
+        <div class="section-inner">
+          <div class="section-heading-row">
+            <div>
+              <p class="section-eyebrow">Content</p>
+              <h1>Content Strategy</h1>
+            </div>
+            <p class="section-summary">
+              Working space for content planning, decisions, and strategy artifacts.
+            </p>
+          </div>
+
+          <div class="content-category-grid">
+            <section class="content-category">
+              <span>Category</span>
+              <h2>To Dos</h2>
+              <ol class="todo-list">
+                <li>Create integration strategy for Varsity TV</li>
+                <li>Create Content Schema</li>
+              </ol>
+            </section>
+
+            <section class="content-category">
+              <span>Category</span>
+              <h2>Content Strategy</h2>
+              <div class="subcategory-list" aria-label="Content Strategy subcategories">
+                <a href="#goals">Goals</a>
+                <a href="#key-insights">Key Insights</a>
+                <a href="#content-map">Content Map</a>
+              </div>
+            </section>
+
+            <section class="content-category">
+              <span>Category</span>
+              <h2>Technology</h2>
+              <div class="subcategory-list" aria-label="Technology subcategories">
+                <a href="tech.html#cms">CMS Tech Stack Recommendation</a>
+              </div>
+            </section>
+          </div>
+
+          <section class="content-detail" id="key-insights" aria-labelledby="key-insights-title">
+            <div class="content-detail-heading">
+              <span>Content Strategy</span>
+              <h2 id="key-insights-title">Key Insights</h2>
+            </div>
+
+            <div class="insight-list">
+              <article class="insight-card">
+                <span class="insight-number">1</span>
+                <div>
+                  <h3>Create Highly Structured Content</h3>
+                  <p>AI systems prefer content that is predictable, chunkable, and semantically organized.</p>
+                  <h4>Best Practices</h4>
+                  <ul>
+                    <li>Use clear headings, FAQ sections, tables, bullet lists, short paragraphs, explicit labels, and structured metadata.</li>
+                  </ul>
+                  <div class="example-grid">
+                    <div>
+                      <h4>Good</h4>
+                      <p><strong>Competition Registration Deadlines</strong></p>
+                      <ul>
+                        <li>Registration opens: August 15</li>
+                        <li>Registration closes: October 1</li>
+                        <li>Payment deadline: October 10</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Bad</h4>
+                      <p>Large narrative paragraphs with buried information.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">2</span>
+                <div>
+                  <h3>Answer Questions Directly</h3>
+                  <p>AI systems heavily favor direct-answer formatting, especially for featured snippets, AI overviews, and retrieval systems.</p>
+                  <h4>Best Practice</h4>
+                  <ul>
+                    <li>Use explicit headings like "What is...", "How do I...", "When does...", and "Where can I...".</li>
+                  </ul>
+                  <p><strong>Example:</strong> "How do I register for a Varsity competition?" Then answer immediately and clearly.</p>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">3</span>
+                <div>
+                  <h3>Use Strong Entity Clarity</h3>
+                  <p>AI retrieval systems rely heavily on entities: brands, events, locations, products, organizations, and relationships.</p>
+                  <p>Varsity should clearly reinforce UCA, NCA, NDA, Summit, Worlds, Varsity TV, myVarsity, and related entities.</p>
+                  <h4>Best Practices</h4>
+                  <ul>
+                    <li>Use full names consistently.</li>
+                    <li>Avoid ambiguous acronyms without context.</li>
+                    <li>Reinforce relationships between entities.</li>
+                  </ul>
+                  <p><strong>Example:</strong> "The UCA National High School Cheerleading Championship is hosted by Varsity Spirit."</p>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">4</span>
+                <div>
+                  <h3>Create Canonical Source Pages</h3>
+                  <p>AI models prioritize authoritative source pages. Varsity should create definitive pages, evergreen pages, and canonical event resources.</p>
+                  <h4>Examples</h4>
+                  <ul>
+                    <li>Dedicated pages for competition rules, registration dates, scoring systems, event schedules, livestream access, qualification requirements, and similar high-value information.</li>
+                    <li>Not fragmented PDFs or scattered announcements.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">5</span>
+                <div>
+                  <h3>Reduce Content Fragmentation</h3>
+                  <p>AI systems struggle when information exists across PDFs, duplicated pages, disconnected subdomains, or inconsistent formats.</p>
+                  <h4>Goal</h4>
+                  <p>Centralize and normalize important information.</p>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">6</span>
+                <div>
+                  <h3>Implement Structured Data (Schema Markup)</h3>
+                  <p>This is one of the highest-impact improvements.</p>
+                  <div class="schema-table-wrap" role="region" aria-label="Recommended schema types" tabindex="0">
+                    <table class="schema-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Content Type</th>
+                          <th scope="col">Schema</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Events</th>
+                          <td>Event</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Videos</th>
+                          <td>VideoObject</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">FAQs</th>
+                          <td>FAQPage</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Organizations</th>
+                          <td>Organization</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Articles</th>
+                          <td>Article</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Livestreams</th>
+                          <td>BroadcastEvent</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Products</th>
+                          <td>Product</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Locations</th>
+                          <td>Place</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Breadcrumbs</th>
+                          <td>BreadcrumbList</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p>Schema helps AI systems identify content types, understand relationships, and extract trustworthy answers.</p>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">7</span>
+                <div>
+                  <h3>Improve Content Freshness Signals</h3>
+                  <p>AI systems increasingly prioritize recent, updated, trustworthy content.</p>
+                  <h4>Best Practices</h4>
+                  <ul>
+                    <li>Show "last updated" dates.</li>
+                    <li>Maintain current schedules and results.</li>
+                    <li>Archive outdated events properly.</li>
+                    <li>Update evergreen pages annually.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">8</span>
+                <div>
+                  <h3>Optimize for Semantic Search, Not Just Keywords</h3>
+                  <p>Modern AI retrieval is semantic. Topic depth matters more than keyword stuffing.</p>
+                  <h4>Varsity Should Create</h4>
+                  <ul>
+                    <li>Comprehensive event hubs.</li>
+                    <li>Complete guides.</li>
+                    <li>Interconnected content.</li>
+                    <li>Contextual relationships.</li>
+                  </ul>
+                  <p><strong>Example:</strong> A Summit page should connect registration, livestreams, schedules, rules, hotels, scoring, results, merchandise, and FAQs.</p>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">9</span>
+                <div>
+                  <h3>Improve Crawlability & Accessibility</h3>
+                  <p>AI systems depend heavily on accessible HTML, clean rendering, crawlable content, and page performance.</p>
+                  <h4>Important Technical Requirements</h4>
+                  <ul>
+                    <li>Server-side rendering (SSR).</li>
+                    <li>Fast mobile performance.</li>
+                    <li>Clean semantic HTML.</li>
+                    <li>Accessible navigation.</li>
+                    <li>Minimal hidden JavaScript-rendered content.</li>
+                  </ul>
+                  <p>This is a major reason Next.js is valuable.</p>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">10</span>
+                <div>
+                  <h3>Build Authority & Trust Signals</h3>
+                  <p>AI systems increasingly evaluate authority, consistency, and source trustworthiness.</p>
+                  <h4>Varsity Should</h4>
+                  <ul>
+                    <li>Maintain consistent branding.</li>
+                    <li>Reinforce official ownership.</li>
+                    <li>Clearly identify official event information.</li>
+                    <li>Avoid duplicate or conflicting pages.</li>
+                    <li>Centralize authoritative data.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <span class="insight-number">11</span>
+                <div>
+                  <h3>Create AI-Friendly Event Hubs</h3>
+                  <p>Varsity's biggest AI opportunity is structured event intelligence. Each major event should become a canonical knowledge hub.</p>
+                  <h4>Example Structure: UCA National Championship</h4>
+                  <ul>
+                    <li>Dates</li>
+                    <li>Location</li>
+                    <li>Registration</li>
+                    <li>Qualification</li>
+                    <li>Schedule</li>
+                    <li>Livestream</li>
+                    <li>Results</li>
+                    <li>FAQs</li>
+                    <li>Travel</li>
+                    <li>Merchandise</li>
+                    <li>Rules</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
