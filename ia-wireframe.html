@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Varsity.com Prototype Wireframes</title>
+    <link rel="stylesheet" href="wireframe-preview.css">
+  </head>
+  <body>
+    <header class="preview-toolbar" aria-label="Prototype wireframe preview controls">
+      <a class="back-link" href="index.html">Project Hub</a>
+      <div class="preview-title">
+        <span>Prototype Wireframes</span>
+        <strong id="preview-mode-label">Mobile view: 390 x 844</strong>
+      </div>
+      <div class="view-toggle" role="group" aria-label="Switch prototype viewport">
+        <button class="is-active" type="button" data-view-mode="mobile" aria-pressed="true">Mobile</button>
+        <button type="button" data-view-mode="desktop" aria-pressed="false">Desktop</button>
+      </div>
+    </header>
+
+    <main class="preview-stage" data-preview-mode="mobile">
+      <iframe
+        class="wireframe-frame"
+        id="wireframe-frame"
+        title="Varsity.com prototype wireframe"
+        src="ia-wireframe-content.html"
+      ></iframe>
+    </main>
+
+    <script>
+      const stage = document.querySelector(".preview-stage");
+      const frame = document.querySelector("#wireframe-frame");
+      const modeLabel = document.querySelector("#preview-mode-label");
+      const toggleButtons = [...document.querySelectorAll("[data-view-mode]")];
+
+      const modeLabels = {
+        mobile: "Mobile view: 390 x 844",
+        desktop: "Desktop view: full width, optimized around 1440"
+      };
+
+      function wireframeSource() {
+        return `ia-wireframe-content.html${window.location.hash || "#/"}`;
+      }
+
+      function setMode(mode) {
+        stage.dataset.previewMode = mode;
+        modeLabel.textContent = modeLabels[mode];
+        toggleButtons.forEach((button) => {
+          const isActive = button.dataset.viewMode === mode;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+      }
+
+      toggleButtons.forEach((button) => {
+        button.addEventListener("click", () => setMode(button.dataset.viewMode));
+      });
+
+      frame.src = wireframeSource();
+
+      window.addEventListener("hashchange", () => {
+        frame.src = wireframeSource();
+      });
+
+      setMode("mobile");
+    </script>
+  </body>
+</html>

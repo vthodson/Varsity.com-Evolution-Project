@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Varsity.com Tech</title>
+    <meta
+      name="description"
+      content="Technical notes for the Varsity.com evolution project, including deployment settings and future tech stack documentation."
+    >
+    <link rel="stylesheet" href="project-hub.css">
+  </head>
+  <body>
+    <nav class="project-nav" aria-label="Varsity.com tech navigation">
+      <a class="brand-link" href="index.html" aria-label="Varsity.com evolution project hub">
+        <span><strong>Varsity.com</strong> Evolution Project Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="product-strategy.html">Product Strategy</a>
+        <a href="ia-wireframe.html">Prototype Wireframes</a>
+        <a href="project-plan.html">Project Plan</a>
+        <a href="content-strategy.html">Content Strategy</a>
+        <a href="tech.html" aria-current="page">Tech</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section-band alt">
+        <div class="section-inner">
+          <div class="section-heading-row">
+            <div>
+              <p class="section-eyebrow">Publish and build</p>
+              <h1>Tech</h1>
+            </div>
+            <p class="section-summary">
+              Deployment information lives here now. Tech stack and implementation documentation will be added as we define it.
+            </p>
+          </div>
+
+          <section class="tech-category">
+            <h2 class="subsection-title">Tech Stack</h2>
+            <div class="tech-stack-panel">
+              <div class="todo-block">
+                <h3>To Do</h3>
+                <ol class="todo-list">
+                  <li>Understand the TCO for this tech stack and evaluate ongoing operational costs.</li>
+                  <li>Evaluate AWS out-of-the-box capabilities for the tech stack, including DAM, CMS, and related platform needs.</li>
+                </ol>
+              </div>
+
+              <div class="table-wrap" role="region" aria-label="Tech stack capability recommendations" tabindex="0">
+                <table class="stack-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Capability</th>
+                      <th scope="col">Recommendation</th>
+                      <th scope="col">Why</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Frontend Framework</th>
+                      <td>Next.js / React</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs a modern frontend architecture because the current ecosystem spans content, registration, media, commerce, and operational workflows that must feel unified across devices.</li>
+                          <li>A modern frontend layer is required to support mobile-first experiences, personalization, scalability, performance, and reusable UI components across brands.</li>
+                          <li>Next.js and React are recommended because they are industry-leading frameworks for composable enterprise platforms, support server-side rendering and SEO, integrate well with headless CMS platforms, and provide a strong ecosystem for long-term scalability. ERMP uses this.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr id="cms">
+                      <th scope="row">CMS</th>
+                      <td>Contentful / Sanity / Contentstack / AWS CMS?</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs a headless CMS because content is currently distributed across brands, events, media, commerce, and digital marketing experiences that require faster publishing and better governance.</li>
+                          <li>A headless CMS enables structured, reusable content that can power web, mobile, streaming, email, and future digital channels from a single source.</li>
+                          <li>Contentful, Sanity, and Contentstack are recommended because they are enterprise-grade, API-first platforms that support modular content modeling, localization, governance workflows, and composable architectures.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Commerce</th>
+                      <td>Shopify Plus / commercetools</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs a modern commerce platform because apparel, merchandise, and event-related products are core monetization channels that must integrate seamlessly with media, events, and user identity.</li>
+                          <li>Current commerce experiences are fragmented and disconnected from the broader ecosystem.</li>
+                          <li>Shopify Plus is recommended for operational simplicity and rapid modernization, while commercetools is recommended if Varsity pursues a more enterprise-grade composable commerce architecture with deeper customization and multi-system orchestration.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Search</th>
+                      <td>Algolia / Elastic</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs modern search because users currently navigate a large ecosystem of camps, competitions, livestreams, products, brands, and support content.</li>
+                          <li>Discovery is a core business function, and poor search creates friction in registration, commerce, and engagement workflows.</li>
+                          <li>Algolia is recommended because it provides high-performance federated search, predictive autocomplete, personalization capabilities, relevance tuning, and strong mobile performance.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Identity</th>
+                      <td>Auth0 / Okta / AWS Cognito - default</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs centralized identity management because users currently move between multiple disconnected systems including myVarsity, Varsity TV, ecommerce, shop.varsity, My Team Shop, and brand sites.</li>
+                          <li>Satish's update on BSN Project Passport: Project Passport continues to make strong progress toward establishing a unified identity platform across the BSN Sports ecosystem, creating a seamless and secure experience for customers while laying the foundation for future digital commerce, personalization, and customer engagement capabilities.</li>
+                          <li>This week, both engineering pods successfully completed proof-of-concept implementations using Auth0 and AWS Cognito, demonstrating working Single Sign-On experiences between Sideline and BSN Sports.</li>
+                          <li>While intentionally built as rapid prototypes to validate feasibility rather than production-ready solutions, the effort confirmed that both approaches can support the target architecture and migration strategy.</li>
+                          <li>In parallel, the enterprise identity strategy white paper was distributed to the Enterprise Architecture team for review, with feedback actively being incorporated and finalization targeted for June 9.</li>
+                          <li>These milestones represent important steps toward delivering a scalable, enterprise-wide identity and access management platform that will simplify customer access, strengthen security, and improve operational efficiency across the business.</li>
+                          <li>Fragmented authentication creates poor user experience and limits personalization.</li>
+                          <li>Auth0 and Okta are recommended because they support enterprise-grade SSO, secure authentication, role-based access, social login, MFA, and cross-platform identity orchestration.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Personalization</th>
+                      <td>Dynamic Yield / Optimizely</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs personalization because its users include athletes, parents, coaches, gym owners, fans, and school administrators with very different goals and workflows.</li>
+                          <li>Modern users expect contextual, role-aware experiences that reduce friction and improve engagement.</li>
+                          <li>Dynamic Yield and Optimizely are recommended because they support behavioral targeting, audience segmentation, real-time recommendations, experimentation, and scalable personalization strategies.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Analytics</th>
+                      <td>GA4 + Snowflake + CDP</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs enterprise analytics because the ecosystem spans registrations, streaming, commerce, marketing, and engagement across multiple platforms that currently likely operate in silos.</li>
+                          <li>Unified analytics are required to understand customer journeys, optimize conversion, and support data-driven decisions.</li>
+                          <li>GA4 provides behavioral web analytics, Snowflake supports scalable enterprise data warehousing, and a CDP unifies cross-platform customer profiles and attribution.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DAM</th>
+                      <td>Cloudinary / Bynder / MediaValet already in use</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs a digital asset management platform because the ecosystem depends heavily on photos, videos, livestream content, branding assets, event imagery, and marketing materials across many brands and channels.</li>
+                          <li>Without centralized DAM capabilities, media operations become fragmented and inefficient.</li>
+                          <li>Cloudinary is recommended for developer-friendly media optimization and dynamic delivery, while Bynder is recommended for stronger enterprise brand governance and workflow management.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Video / Streaming</th>
+                      <td>Existing Varsity TV integrations</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs deep streaming integration because livestreaming and video content are core engagement and retention drivers for the Varsity ecosystem.</li>
+                          <li>Varsity TV already has an established audience and operational infrastructure, making integration more valuable than replacement.</li>
+                          <li>The future platform should orchestrate Varsity TV experiences more seamlessly within the broader ecosystem rather than maintaining disconnected user journeys.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Hosting</th>
+                      <td>Vercel / AWS</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs modern cloud hosting because the platform experiences seasonal traffic spikes during major competitions, livestream events, and registration periods.</li>
+                          <li>The current ecosystem requires scalability, reliability, global performance, and rapid deployment capabilities.</li>
+                          <li>Vercel is recommended for optimized Next.js deployments and frontend velocity, while AWS provides enterprise-grade infrastructure, scalability, security, and backend extensibility.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">APIs</th>
+                      <td>GraphQL + REST</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs an API-first integration strategy because the future platform must orchestrate multiple backend systems including registration, streaming, commerce, identity, analytics, and CMS platforms.</li>
+                          <li>APIs are foundational to composable architecture and future scalability.</li>
+                          <li>GraphQL is recommended for flexible frontend orchestration and reduced over-fetching, while REST remains valuable for operational integrations and third-party interoperability.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Experimentation</th>
+                      <td>Optimizely / LaunchDarkly</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs experimentation capabilities because modernization requires continuous UX optimization, feature testing, conversion improvements, and phased rollout strategies across a large user base.</li>
+                          <li>Experimentation reduces risk and enables data-driven product decisions.</li>
+                          <li>Optimizely is recommended for enterprise experimentation and personalization, while LaunchDarkly is recommended for feature flagging and controlled progressive releases.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Customer Data</th>
+                      <td>Customer Data Platform (CDP) / Segment?</td>
+                      <td>
+                        <ul class="stack-list">
+                          <li>Varsity.com needs a unified customer data layer because user interactions are fragmented across registrations, livestreams, commerce, content engagement, ecommerce, channels, and support systems.</li>
+                          <li>Without unified customer intelligence, personalization and lifecycle engagement remain limited.</li>
+                          <li>A CDP is recommended because it centralizes customer identity, behavioral data, segmentation, attribution, and cross-platform activation for marketing and personalization initiatives.</li>
+                          <li>Segment aligns best with that direction because it is strongest as a customer data infrastructure layer, identity orchestration platform, and integration hub across distributed systems.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="tech-category">
+            <h2 class="subsection-title">Deploy</h2>
+            <div class="tech-grid">
+              <div class="tech-card">
+                <span>GitHub repository</span>
+                <strong>varsity-dot-com-evolution-project</strong>
+                <p>Private repository on the personal GitHub account.</p>
+              </div>
+              <div class="tech-card">
+                <span>Netlify project</span>
+                <strong>varsity-com</strong>
+                <p>Connect the repo to this existing Netlify project for continuous deployment.</p>
+              </div>
+              <div class="tech-card">
+                <span>Build settings</span>
+                <strong>No build command</strong>
+                <p>Publish directory should be <code>.</code> and production branch should be <code>main</code>.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-band">
+      <div class="footer-inner">
+        <span>Varsity.com Tech</span>
+        <a href="index.html">Back to project hub</a>
+      </div>
+    </footer>
+  </body>
+</html>
