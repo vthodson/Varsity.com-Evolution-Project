@@ -20,7 +20,7 @@ export default function Home() {
         <p>Select your sport and type of participation</p>
       </section>
 
-      {/* Interest Grid */}
+      {/* Sport Grid */}
       <section className={styles.grid}>
         {/* School Cheer */}
         <Link href="/school-cheer" className={styles.card}>
@@ -62,14 +62,7 @@ export default function Home() {
           </div>
         </Link>
       </section>
-        {/* Performing Arts */}
-        <Link href="/performingarts" className={styles.card}>
-          <div className={styles.cardContent}>
-            <h3>Performing Arts</h3>
-            <p>Band, color guard, uniforms, and events</p>
-          </div>
-        </Link>
-      </section>
+
       {/* Footer */}
       <footer className={styles.footer}>
         <p>&copy; 2026 Varsity Spirit. All rights reserved.</p>
