@@ -774,6 +774,38 @@ code {
   font-weight: 900;
 }
 
+.strategy-artifacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.strategy-artifacts > span {
+  margin-right: 2px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.strategy-artifacts a {
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.strategy-artifacts a:hover {
+  border-color: var(--blue);
+  background: var(--mist);
+}
+
 .tactic-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
