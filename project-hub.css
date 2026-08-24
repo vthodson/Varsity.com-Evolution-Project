@@ -721,6 +721,33 @@ code {
   grid-column: 2;
 }
 
+.strategy-evidence {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  background: var(--mist);
+}
+
+.strategy-evidence span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.strategy-card .strategy-evidence p {
+  grid-column: auto;
+  color: var(--ink);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
 .strategy-list {
   display: grid;
   gap: 12px;
