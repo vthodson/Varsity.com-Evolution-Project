@@ -100,6 +100,11 @@
           <label for="challenges">What are some challenges you've had using Varsity.com?</label>
           <textarea id="challenges" name="challenges" placeholder="Anything that's slow, confusing, or frustrating..."></textarea>
         </div>
+      <div class="field">
+        <label for="stakeholderFeedback">What feedback/pain points do you hear from stakeholders and customers about Varsity.com?</label>
+        <textarea id="stakeholderFeedback" name="stakeholder_feedback" placeholder="What others tell you, even secondhand..."></textarea>
+      </div>
+      
 
         <button class="btn btn-primary" id="submitBtn" type="submit">Send feedback</button>
         <div class="status" id="formStatus"></div>
@@ -123,8 +128,9 @@
     const wish = document.getElementById('wish').value.trim();
     const seeDo = document.getElementById('seeDo').value.trim();
     const challenges = document.getElementById('challenges').value.trim();
+        const stakeholderFeedback = document.getElementById('stakeholderFeedback').value.trim();
 
-    if (!wish && !seeDo && !challenges) {
+    if (!wish && !seeDo && !challenges && !stakeholderFeedback) {
       statusEl.textContent = "Add at least one answer before sending.";
       statusEl.className = "status err";
       return;
