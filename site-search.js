@@ -46,7 +46,7 @@
     addStyles();
     const wrapper = document.createElement('div');
     wrapper.className = 'site-search';
-    wrapper.innerHTML = '<label class="sr-only" for="site-global-search">Search the Varsity.com evolution project</label><input id="site-global-search" type="search" placeholder="Search this project" autocomplete="off" aria-controls="site-search-results"><div id="site-search-results" class="site-search-results" role="listbox" hidden></div>';
+    wrapper.innerHTML = '<input id="site-global-search" aria-label="Search this project" type="search" placeholder="Search this project" autocomplete="off" aria-controls="site-search-results"><div id="site-search-results" class="site-search-results" role="listbox" hidden></div>';
     nav.append(wrapper);
     const input = wrapper.querySelector('input');
     const results = wrapper.querySelector('.site-search-results');
