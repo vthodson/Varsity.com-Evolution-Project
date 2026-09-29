@@ -4,6 +4,7 @@
     ['product-strategy.html', 'Product Strategy'],
     ['current-varsity-feedback.html', 'Current Varsity.com Feedback'],
     ['content-strategy.html', 'Content Strategy'],
+    ['integration-data-content-ownership-map.html', 'Integration, Data & Content Ownership Map'],
     ['ia-wireframe.html', 'Prototype Wireframes'],
     ['project-plan.html', 'Project Plan'],
     ['tech.html', 'Tech']

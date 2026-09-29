@@ -10,6 +10,7 @@ The production Varsity.com site is not built in this folder. The current impleme
 - [High-Level Project Plan](project-plan.html)
 - [Prototype Wireframes](ia-wireframe.html)
 - [Content Strategy](content-strategy.html)
+- [Integration, Data & Content Ownership Map](integration-data-content-ownership-map.html)
 - [Tech](tech.html)
 
 ## Run Locally

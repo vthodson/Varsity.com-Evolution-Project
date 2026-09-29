@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Varsity.com Integration, Data &amp; Content Ownership Map</title>
+    <meta name="description" content="A working map of the systems, data sources, content owners, and connections required to power Varsity.com.">
+    <link rel="stylesheet" href="project-hub.css">
+  </head>
+  <body>
+    <nav class="project-nav" aria-label="Varsity.com project hub navigation">
+      <a class="brand-link" href="index.html" aria-label="Varsity.com evolution project hub">
+        <span><strong>Varsity.com</strong> Evolution Project Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="product-strategy.html">Product Strategy</a>
+        <a href="ia-wireframe.html">Prototype Wireframes</a>
+        <a href="project-plan.html">Project Plan</a>
+        <a href="content-strategy.html">Content Strategy</a>
+        <a href="integration-data-content-ownership-map.html" aria-current="page">Integration Map</a>
+        <a href="tech.html">Tech</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section-band alt" aria-labelledby="map-title">
+        <div class="section-inner">
+          <div class="section-heading-row">
+            <div>
+              <p class="section-eyebrow">Working architecture</p>
+              <h1 id="map-title">Varsity.com Integration, Data &amp; Content Ownership Map</h1>
+            </div>
+            <p class="section-summary">A working map of the systems, data sources, content owners, and connections required to power Varsity.com.</p>
+          </div>
+
+          <div class="integration-note" role="note">
+            <strong>How to read this map</strong>
+            <p>Confirmed current-state platforms are named as such. All other products are evaluation candidates, not a commitment to purchase or replace an existing Varsity system. Brand-owned evergreen content belongs in the CMS; live event, account, transaction, and order data stays in the system that owns it.</p>
+          </div>
+
+          <section class="tech-category" aria-labelledby="content-foundation">
+            <h2 class="subsection-title" id="content-foundation">Content, knowledge, and platform foundation</h2>
+            <div class="integration-table-wrap" role="region" aria-label="Content, knowledge, and platform foundation map" tabindex="0">
+              <table class="integration-map">
+                <thead>
+                  <tr><th scope="col">Area</th><th scope="col">Detailed description</th><th scope="col">Example use case</th><th scope="col">Current platform or technologies to evaluate</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Headless CMS</th><td>Central publishing system for pages, reusable modules, event-page layouts, articles, FAQs, metadata, links, and approvals.</td><td>Marketing creates one Youth/Rec promotional content card and reuses it on the Cheer hub, a Rec Summit page, email, and app.</td><td>Contentstack; Contentful; Sanity</td></tr>
+                  <tr><th scope="row">Brand-owned CMS content</th><td>Each brand team maintains its approved evergreen modules in the CMS: descriptions, images, calls to action, articles, and destination links.</td><td>Varsity University updates its own description, image, CTA, and destination link themselves.</td><td>Contentstack; Contentful; Sanity</td></tr>
+                  <tr><th scope="row">Content governance</th><td>Defines permissions, approval steps, review dates, expiration rules, and publishing standards for shared content.</td><td>An event-promotion module cannot publish until the event owner and content marketer both sign off.</td><td>Contentstack workflows; Contentful workflows; Sanity Studio</td></tr>
+                  <tr><th scope="row">Digital asset management</th><td>Stores approved images, logos, documents, video thumbnails, and brand files for use in the CMS and other channels.</td><td>A Cheer editor selects an approved Rec Summit image rather than uploading a duplicate or outdated file.</td><td>MediaValet (current); Bynder; Cloudinary</td></tr>
+                  <tr><th scope="row">Searchable Knowledge Hub</th><td>Public, searchable guides, FAQs, checklists, rules, policies, and preparation content; tagged by topic, audience, event, and brand.</td><td>A parent searches “bids” and finds a plain-language guide, then reaches the correct event details.</td><td>Contentstack; Zendesk Guide; Intercom</td></tr>
+                  <tr><th scope="row">Site search</th><td>Searches across CMS pages, Knowledge Hub articles, events, support content, and selected products from one interface.</td><td>A visitor searches “Rec Summit parking” and receives event details, parking guidance, and support results.</td><td>Algolia; Coveo; Elasticsearch</td></tr>
+                  <tr><th scope="row">API and integration layer</th><td>Provides secure APIs, webhooks, transformations, retries, monitoring, and access control between systems.</td><td>A new event in ERMP automatically creates or updates the matching CMS event record.</td><td>MuleSoft; Boomi; Azure API Management</td></tr>
+                  <tr><th scope="row">Integration monitoring</th><td>Detects failed, delayed, or incomplete data transfers between systems.</td><td>Digital receives an alert when ticket availability stopped updating from the ticketing platform.</td><td>Datadog; New Relic; Azure Monitor</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="tech-category" aria-labelledby="journeys-and-commerce">
+            <h2 class="subsection-title" id="journeys-and-commerce">Events, account actions, catalogs, commerce, and support</h2>
+            <div class="integration-table-wrap" role="region" aria-label="Events, account actions, catalogs, commerce, and support map" tabindex="0">
+              <table class="integration-map">
+                <thead>
+                  <tr><th scope="col">Area</th><th scope="col">Detailed description</th><th scope="col">Example use case</th><th scope="col">Current platform or technologies to evaluate</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Event data</th><td>Authoritative event data: name, dates, location, divisions, deadlines, registration status, and operational details.</td><td>The Rec Summit event hub automatically shows the correct dates and venue.</td><td>ERMP (system of record); ERMP API/webhooks; integration layer/API gateway</td></tr>
+                  <tr><th scope="row">Registration</th><td>Sends visitors into the approved registration journey and returns useful registration status data where appropriate.</td><td>A coach moves from an event page to the correct registration flow for that event and division.</td><td>ERMP (system of record); ERMP API/webhooks; integration layer/API gateway</td></tr>
+                  <tr><th scope="row">Schedules, results, rankings, and bids</th><td>Supplies timely schedules, results, rankings, scoring, and bid information. The official data owner must be confirmed for each data type.</td><td>A family sees the current competition schedule and results without waiting for a manual web update.</td><td>SimpleScore; Varsity TV; ERMP</td></tr>
+                  <tr><th scope="row">myVarsity identity and SSO</th><td>Handles sign-in, account recognition, access control, and consistent handoffs between Varsity.com and account tasks.</td><td>A signed-in parent returns to registration, payment, or saved-event activity without another login.</td><td>myVarsity / Project Passport direction; Auth0; AWS Cognito</td></tr>
+                  <tr><th scope="row">Payments</th><td>Keeps payment collection inside the approved secure transaction platform; Varsity.com sends visitors into the correct payment step.</td><td>A coach reviewing a registration balance enters the secure payment flow.</td><td>J.P. Morgan Payments / Chase Paymentech; Stripe; Adyen</td></tr>
+                  <tr><th scope="row">Ticketing</th><td>Provides event-specific ticket purchase, availability, and delivery information.</td><td>A parent buys tickets from the event page rather than hunting through a separate site.</td><td>Leap Technologies; Ticketmaster; AXS</td></tr>
+                  <tr><th scope="row">Video and livestream</th><td>Connects event pages to live coverage, replay, highlights, and related media without duplicating the video platform.</td><td>A visitor on a championship page can watch the livestream or recap.</td><td>Varsity TV; FloSports; Mux</td></tr>
+                  <tr><th scope="row">Fashion catalog management</th><td>Source of truth for Varsity School Fashion, Varsity All Star Fashion, and Varsity Dance catalogs: collections, styles, colors, sizes, imagery, line sheets, and seasonal availability. It supports sales and catalog access; it does not process retail checkout.</td><td>A school coach browses the new School Fashion collection, downloads a line sheet, saves styles for review, and requests follow-up from a fashion representative.</td><td>Salsify; Akeneo; inriver</td></tr>
+                  <tr><th scope="row">Retail product data and purchase</th><td>Shopify is the source for consumer-facing retail products, prices, inventory, cart, checkout, and orders. Varsity.com can feature selected products or link into Shopify.</td><td>A parent views a featured event item on Varsity.com, then completes the purchase in Shopify.</td><td>Shopify (retail platform); Shopify Storefront API; Shopify Plus</td></tr>
+                  <tr><th scope="row">My Team Shop</th><td><strong>Confirmed current-state platform.</strong> Team Shops are created and managed in VDS. VDS supplies product, SKU/base-garment, image, and dressing-room data to Team Shop, which then connects to order, tax, and payment systems.</td><td>A coach creates a team store in VDS; families shop configured apparel and gear through My Team Shop.</td><td>HCL Commerce 9.1.18.1; HCL headless Next.js Ruby Storefront; VDS Team Shop tab</td></tr>
+                  <tr><th scope="row">Team Shop operations</th><td>Routes Team Shop order and transaction data to the systems that fulfill orders, calculate tax, and process payments.</td><td>A family buys team apparel; the order routes for fulfillment, tax calculation, and payment processing.</td><td>OMS; Vertex; Tempus Payments</td></tr>
+                  <tr><th scope="row">CRM and lead routing</th><td>Captures and routes rep requests, catalog requests, partnership inquiries, and other high-value forms to the correct team.</td><td>A school apparel lead is assigned to the correct local representative.</td><td>Salesforce; HubSpot; FormAssembly</td></tr>
+                  <tr><th scope="row">Customer support</th><td>Handles help requests, support tickets, contact forms, and escalation when self-service content is insufficient.</td><td>A parent who cannot resolve a registration issue opens a case with the relevant event context attached.</td><td>Zendesk; Intercom; Salesforce Service Cloud</td></tr>
+                  <tr><th scope="row">Gym and studio directory</th><td>Maintains searchable gym/studio location, program, contact, and service information.</td><td>A family searches for nearby Youth/Rec programs by ZIP code.</td><td>Contentstack; Directus; PostgreSQL with PostGIS</td></tr>
+                  <tr><th scope="row">Maps, venue, and travel</th><td>Provides venue maps, directions, parking, accessible-entry information, and potential travel or lodging guidance.</td><td>An event attendee opens directions and parking details from the event hub.</td><td>Google Maps Platform; Mapbox; Esri</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="tech-category" aria-labelledby="growth-measurement">
+            <h2 class="subsection-title" id="growth-measurement">Growth, measurement, and future expansion</h2>
+            <div class="integration-table-wrap" role="region" aria-label="Growth, measurement, and future expansion map" tabindex="0">
+              <table class="integration-map">
+                <thead>
+                  <tr><th scope="col">Area</th><th scope="col">Detailed description</th><th scope="col">Example use case</th><th scope="col">Current platform or technologies to evaluate</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Web and conversion analytics</th><td>Measures visits, search behavior, registration starts, ticket clicks, video handoffs, shopping referrals, and support deflection.</td><td>See whether Youth/Rec visitors find an event and begin registration.</td><td>Adobe Analytics; Google Analytics 4; Amplitude</td></tr>
+                  <tr><th scope="row">Tag management</th><td>Controls analytics, conversion, advertising, and marketing tags without frequent code releases.</td><td>Marketing adds a campaign measurement tag after the required approval process.</td><td>Google Tag Manager; Adobe Tags; Tealium iQ</td></tr>
+                  <tr><th scope="row">Consent management</th><td>Captures privacy preferences and controls tracking based on visitor consent.</td><td>Analytics and personalization tags do not run until the visitor’s preferences permit them.</td><td>OneTrust; TrustArc; Cookiebot</td></tr>
+                  <tr><th scope="row">Personalization and customer-data layer</th><td>Uses approved signals—role, interests, prior engagement, seasonality, and account status—to prioritize relevant modules without changing the core site structure.</td><td>A parent arriving from a Rec Summit email sees schedules, parking, tickets, FAQs, and preparation guidance first; a coach sees registration, bids, team-shop, and program-management actions first.</td><td>Adobe Experience Platform; Twilio Segment; Optimizely</td></tr>
+                  <tr><th scope="row">Email and SMS marketing</th><td>Uses CMS-approved content and audience data in lifecycle and campaign messaging.</td><td>An attendee receives an event-preparation reminder with the same current information as the event hub.</td><td>Braze; Salesforce Marketing Cloud; Iterable</td></tr>
+                  <tr><th scope="row">Data warehouse</th><td>Combines website, event, commerce, campaign, and account data for reporting and analysis.</td><td>Leadership compares event discovery, ticketing, merchandise, and repeat-visit performance.</td><td>Snowflake; Google BigQuery; Databricks</td></tr>
+                  <tr><th scope="row">Business-intelligence dashboards</th><td>Turns warehouse data into launch dashboards and recurring performance reporting.</td><td>Leaders see registration starts, ticket clicks, video referrals, and support deflection by event.</td><td>Looker; Power BI; Tableau</td></tr>
+                  <tr><th scope="row">Sponsorship management</th><td>Separates sponsor commitments, approved placements, campaign assets, and reporting from Varsity growth modules.</td><td>A sponsor appears on a relevant event page without displacing essential event information.</td><td>Google Ad Manager; Kevel; AdButler</td></tr>
+                  <tr><th scope="row">Social-content integration</th><td>Pulls in approved, curated social posts or short-form event media when useful and accessible.</td><td>A championship recap page displays selected official social highlights.</td><td>Taggbox; Curator.io; EmbedSocial</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-band">
+      <div class="footer-inner">
+        <span>Varsity.com Integration, Data &amp; Content Ownership Map</span>
+        <a href="index.html">Back to project hub</a>
+      </div>
+    </footer>
+    <script src="site-search.js"></script>
+  </body>
+</html>

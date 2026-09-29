@@ -2265,6 +2265,7 @@ const routes = {
       card("Cheer Events", "Camps, competitions, special events, schedules, results, tickets, gear, and registration help.", "#/events?activity=Cheer", "Events"),
       card("School", "Find school cheer camps, competitions, resources, fashion/uniforms, and news.", "#/audience/school?activity=Cheer", "Program"),
       card("All Star", "Find All Star competitions, results, scoring, The Varsity Cheer League, resources, and fashion/uniforms.", "#/audience/all-star?activity=Cheer", "Program"),
+      card("Youth and Rec", "Explore youth and recreational cheer pathways, with program resources coming soon.", "#/youth-rec", "Program"),
       card("Learn Cheer", "Beginner guides, participation pathways, camps, rankings, rules, safety, and coach resources.", "#/learn?activity=Cheer", "Knowledge"),
       card("Find a Cheer Gym", "Search prototype cheer gym listings by location, program type, and services.", "#/directory?type=Cheer%20Gym", "Directory"),
       card("The Varsity Cheer League", "Follow The League for All Star Cheer point events, standings, rankings, and related Varsity TV coverage.", "#/the-varsity-cheer-league", "All Star Cheer"),
@@ -2273,6 +2274,12 @@ const routes = {
       card("Watch Cheer", "Live and replay coverage for cheer events.", "#/watch?activity=Cheer", "Watch"),
       card("Cheer Support", "Registration, payment, ticket, event gear, uniform, and account help.", "#/support?topic=Cheer", "Support")
     ]
+  },
+  "/youth-rec": {
+    title: "Youth and Rec Cheer",
+    eyebrow: "Choose your path",
+    copy: "A dedicated hub for youth and recreational cheer.",
+    custom: renderYouthRecHub
   },
   "/the-varsity-cheer-league": {
     title: "The Varsity Cheer League",
@@ -2688,6 +2695,17 @@ function renderRouteCardsWithNews(routePath, newsTitle, newsCopy, filters) {
       ctaHref: getNewsHref(filters),
       ctaLabel: "See more news"
     })}
+  `;
+}
+
+function renderYouthRecHub() {
+  return `
+    <section class="view-section">
+      <div class="section-head">
+        <h2>Youth and Rec Cheer</h2>
+        <p>Program content and next steps coming soon.</p>
+      </div>
+    </section>
   `;
 }
 
