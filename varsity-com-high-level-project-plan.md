@@ -1,6 +1,6 @@
 # Varsity.com High-Level Project Plan
 
-Assumption: project work begins September 1, 2026. This plan assumes the future Varsity.com is a customer-friendly front door into Varsity's broader ecosystem: Events, myVarsity, Varsity TV, Shop, My Team Shop, CLI Studios, Yearbook Order Center, eShare, rep-supported catalog paths, Knowledge Hub, News, and Support.
+Assumption: project work begins October 1, 2026. This plan assumes the future Varsity.com is a customer-friendly front door into Varsity's broader ecosystem: Events, myVarsity, Varsity TV, Shop, My Team Shop, CLI Studios, Yearbook Order Center, eShare, rep-supported catalog paths, Knowledge Hub, News, and Support.
 
 ## Project Goals
 
@@ -16,19 +16,18 @@ Assumption: project work begins September 1, 2026. This plan assumes the future 
 
 | Phase | Dates | Focus | Primary Outcome |
 | --- | --- | --- | --- |
-| 1. Mobilization and Scope Alignment | Sep 1-Sep 18, 2026 | Team setup, project charter, scope, decision rights, baseline IA review | Approved project charter and MVP definition |
-| 2. Discovery, Audit, and Requirements | Sep 21-Oct 16, 2026 | Current-site audit, stakeholder interviews, analytics review, content inventory, technical inventory | Confirmed requirements, risks, dependencies, and content/data inventory |
-| 3. Strategy and MVP Blueprint | Oct 19-Nov 13, 2026 | Finalize IA, user journeys, SEO strategy, content model, event model, handoff model | Approved blueprint for UX, content, SEO, and technology |
-| 4. UX, Content Model, and SEO Architecture | Nov 16-Dec 18, 2026 | Wireframes, templates, taxonomies, structured data plan, redirect strategy, governance | Approved template set and content architecture |
-| Holiday Buffer | Dec 21-Jan 1, 2027 | Reduced team velocity | Protect schedule from holiday slowdown |
-| 5. Visual Design and Prototype Validation | Jan 4-Feb 12, 2027 | Mobile-first design, component system, usability testing, stakeholder review | Approved design system and clickable prototype |
-| 6. Technical Architecture and Platform Setup | Jan 4-Feb 12, 2027 | CMS setup, environments, integrations, data feeds, analytics plan | Build-ready technical foundation |
-| 7. Build MVP Website | Feb 15-Apr 30, 2027 | Templates, components, search, navigation, Events, key handoffs, core pages | Functional MVP in staging |
-| 8. Content Production and Migration | Mar 15-May 14, 2027 | Page writing, content migration, media, metadata, redirects, QA | Launch-ready content and migration package |
-| 9. QA, Accessibility, SEO, and Performance | May 3-Jun 11, 2027 | Cross-device QA, accessibility, technical SEO, schema, analytics, performance | Release candidate |
-| 10. UAT, Training, and Launch Readiness | Jun 14-Jul 2, 2027 | Business owner review, CMS training, support readiness, launch checklist | Launch approval |
-| 11. Launch | Jul 6-Jul 16, 2027 | Soft launch, monitoring, public launch, issue response | New Varsity.com live |
-| 12. Post-Launch Optimization | Jul 19-Aug 27, 2027 | SEO monitoring, analytics review, content tuning, backlog prioritization | 30/60-day optimization roadmap |
+| 1. Mobilization and Scope Alignment | Oct 1-Oct 18, 2026 | Team setup, project charter, scope, decision rights, baseline IA review, RFP development and issuance for vendor/implementation support (in parallel) | Approved project charter and MVP definition; RFP issued to vendor shortlist; formal project kickoff held |
+| 2. Discovery, Audit, and Requirements | Oct 21-Nov 16, 2026 | Current-site audit, stakeholder interviews, analytics review, content inventory, technical inventory, RFP evaluation and vendor selection (in parallel) | Confirmed requirements, risks, dependencies, and content/data inventory; implementation vendor selected and contracted |
+| 3. Strategy and MVP Blueprint | Nov 19-Dec 13, 2026 | Finalize IA, user journeys, SEO strategy, content model, event model, handoff model; vendor engaged from the start of this phase | Approved blueprint for UX, content, SEO, and technology |
+| 4. UX, Content Model, and SEO Architecture | Dec 16, 2026-Jan 29, 2027 | Wireframes, templates, taxonomies, structured data plan, redirect strategy, governance (includes Dec 21-Jan 1 holiday outage; reduced velocity) | Approved template set and content architecture |
+| 5. Visual Design and Prototype Validation | Feb 1-Mar 11, 2027 | Mobile-first design, component system, usability testing, stakeholder review | Approved design system and clickable prototype |
+| 6. Technical Architecture and Platform Setup | Feb 1-Mar 11, 2027 | CMS setup, environments, integrations, data feeds, analytics plan | Build-ready technical foundation |
+| 7. Build MVP Website | Mar 14-May 26, 2027 | Templates, components, search, navigation, Events, key handoffs, core pages | Functional MVP in staging |
+| 8. Content Production and Migration | Apr 11-Jun 9, 2027 | Page writing, content migration, media, metadata, redirects, QA | Launch-ready content and migration package |
+| 9. QA, Accessibility, SEO, and Performance | May 29-Jul 6, 2027 | Cross-device QA, accessibility, technical SEO, schema, analytics, performance | Release candidate |
+| 10. UAT, Training, and Launch Readiness | Jul 11-Jul 29, 2027 | Business owner review, CMS training, support readiness, launch checklist | Launch approval |
+| 11. Launch | Aug 2-Aug 12, 2027 | Soft launch, monitoring, public launch, issue response | New Varsity.com live |
+| 12. Post-Launch Optimization | Aug 15-Sep 23, 2027 | SEO monitoring, analytics review, content tuning, backlog prioritization | 30/60-day optimization roadmap |
 
 ## Workstreams
 
@@ -121,14 +120,15 @@ Release 1 should prioritize the highest-value customer journeys and the informat
 
 | Decision | Needed By | Why It Matters |
 | --- | --- | --- |
-| Release 1 scope | Sep 18, 2026 | Prevents the project from becoming too broad to launch well |
-| Platform/CMS direction | Oct 16, 2026 | Impacts templates, content workflow, integrations, and timeline |
-| Event data source and governance | Oct 16, 2026 | Events is a core customer journey and must be reliable |
-| Content migration approach | Nov 13, 2026 | Determines staffing, timeline, redirects, and SEO risk |
-| Handoff ownership | Nov 13, 2026 | Clarifies who owns myVarsity, Varsity TV, Shop, CLI, Yearbook, rep, and support flows |
-| Directory scope | Nov 13, 2026 | Determines whether gym/studio directory launches, pilots, or waits |
-| Design system approval | Feb 12, 2027 | Unlocks full build velocity |
-| Launch readiness approval | Jul 2, 2027 | Confirms business, technical, content, and support readiness |
+| Release 1 scope | Oct 18, 2026 | Prevents the project from becoming too broad to launch well |
+| Vendor/RFP award | Nov 16, 2026 | Locks in the implementation partner needed for the blueprint, build, and launch phases |
+| Platform/CMS direction | Nov 16, 2026 | Impacts templates, content workflow, integrations, and timeline |
+| Event data source and governance | Nov 16, 2026 | Events is a core customer journey and must be reliable |
+| Content migration approach | Dec 13, 2026 | Determines staffing, timeline, redirects, and SEO risk |
+| Handoff ownership | Dec 13, 2026 | Clarifies who owns myVarsity, Varsity TV, Shop, CLI, Yearbook, rep, and support flows |
+| Directory scope | Dec 13, 2026 | Determines whether gym/studio directory launches, pilots, or waits |
+| Design system approval | Mar 11, 2027 | Unlocks full build velocity |
+| Launch readiness approval | Jul 29, 2027 | Confirms business, technical, content, and support readiness |
 
 ## Major Risks and Mitigations
 
@@ -167,7 +167,7 @@ Release 1 should prioritize the highest-value customer journeys and the informat
 
 ## Practical First 30 Days
 
-From September 1 to September 30, 2026, the team should focus on:
+From October 1 to October 31, 2026, the team should focus on:
 
 - Confirming project team, sponsor, product owner, and decision rights.
 - Reviewing and approving the working IA direction.
