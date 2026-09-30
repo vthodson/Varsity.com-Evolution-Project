@@ -150,15 +150,19 @@ code {
     linear-gradient(135deg, #051f31 0%, #0b6fb9 100%);
 }
 
+.why-intro .section-inner {
+  width: min(1500px, 100%);
+}
+
 .why-intro .section-eyebrow {
   color: #5fa6db;
 }
 
 .why-intro h1 {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 10px 0 36px;
   color: #ffffff;
-  font-size: clamp(42px, 7vw, 82px);
+  font-size: clamp(46px, 6vw, 96px);
   line-height: 0.98;
   letter-spacing: -0.03em;
 }
@@ -166,18 +170,18 @@ code {
 .why-points {
   display: grid;
   gap: 14px;
-  max-width: 920px;
+  max-width: none;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .why-points li {
-  padding: 17px 20px 17px 24px;
+  padding: 20px 26px 20px 30px;
   border-left: 3px solid #5fa6db;
   color: rgba(255, 255, 255, 0.92);
   background: rgba(255, 255, 255, 0.08);
-  font-size: clamp(17px, 2vw, 22px);
+  font-size: clamp(19px, 2vw, 27px);
   font-weight: 700;
   line-height: 1.32;
 }
