@@ -139,6 +139,73 @@ code {
     #ffffff;
 }
 
+.why-home {
+  min-height: 100vh;
+}
+
+.why-intro {
+  min-height: 100vh;
+  padding: clamp(54px, 9vw, 120px) clamp(18px, 5vw, 72px);
+  background:
+    linear-gradient(135deg, rgba(13, 27, 42, 0.98), rgba(35, 119, 173, 0.9)),
+    var(--navy);
+}
+
+.why-intro .section-eyebrow {
+  color: var(--gold);
+}
+
+.why-intro h1 {
+  max-width: 900px;
+  margin: 10px 0 36px;
+  color: #ffffff;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.why-points {
+  display: grid;
+  gap: 14px;
+  max-width: 920px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.why-points li {
+  padding: 17px 20px 17px 24px;
+  border-left: 3px solid var(--gold);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 700;
+  line-height: 1.32;
+}
+
+.enter-hub {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 13px 24px;
+  margin-top: 38px;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  color: var(--navy);
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.enter-hub:hover {
+  color: #ffffff;
+  background: transparent;
+}
+
 .section-band.alt {
   background: #ffffff;
 }

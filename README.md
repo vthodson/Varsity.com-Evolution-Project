@@ -6,7 +6,8 @@ The production Varsity.com site is not built in this folder. The current impleme
 
 ## Start Here
 
-- [Project Hub](index.html)
+- [Why Evolve Varsity.com Now](index.html)
+- [Project Hub](project-hub.html)
 - [High-Level Project Plan](project-plan.html)
 - [Prototype Wireframes](ia-wireframe.html)
 - [Content Strategy](content-strategy.html)
