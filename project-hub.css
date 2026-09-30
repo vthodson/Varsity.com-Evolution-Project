@@ -147,12 +147,11 @@ code {
   min-height: 100vh;
   padding: clamp(54px, 9vw, 120px) clamp(18px, 5vw, 72px);
   background:
-    linear-gradient(135deg, rgba(13, 27, 42, 0.98), rgba(35, 119, 173, 0.9)),
-    var(--navy);
+    linear-gradient(135deg, #051f31 0%, #0b6fb9 100%);
 }
 
 .why-intro .section-eyebrow {
-  color: var(--gold);
+  color: #5fa6db;
 }
 
 .why-intro h1 {
@@ -175,7 +174,7 @@ code {
 
 .why-points li {
   padding: 17px 20px 17px 24px;
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid #5fa6db;
   color: rgba(255, 255, 255, 0.92);
   background: rgba(255, 255, 255, 0.08);
   font-size: clamp(17px, 2vw, 22px);
@@ -190,10 +189,10 @@ code {
   min-height: 52px;
   padding: 13px 24px;
   margin-top: 38px;
-  border: 1px solid #ffffff;
-  border-radius: 999px;
-  color: var(--navy);
-  background: #ffffff;
+  border: 1px solid #d5004b;
+  border-radius: 2px;
+  color: #ffffff;
+  background: #d5004b;
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 0.05em;
@@ -202,7 +201,7 @@ code {
 }
 
 .enter-hub:hover {
-  color: #ffffff;
+  border-color: #ffffff;
   background: transparent;
 }
 
