@@ -16,7 +16,7 @@
 
   function addStyles() {
     const style = document.createElement('style');
-    style.textContent =       '.site-search{position:relative;margin-left:auto;width:min(280px,25vw)}' +
+    style.textContent =       '.site-search{position:relative;width:100%}' +
       '.site-search input{width:100%;min-height:38px;border:1px solid rgba(9,43,73,.22);border-radius:999px;background:#fff;color:#092b49;padding:8px 14px;font:inherit;font-size:13px}' +
       '.site-search input:focus{outline:3px solid rgba(0,185,236,.26);border-color:#00b9ec}' +
       '.site-search-results{position:absolute;z-index:30;top:calc(100% + 8px);right:0;width:min(440px,88vw);max-height:min(520px,65vh);overflow-y:auto;border:1px solid rgba(9,43,73,.18);border-radius:14px;background:#fff;box-shadow:0 16px 42px rgba(4,22,40,.2);padding:6px;color:#092b49}' +
